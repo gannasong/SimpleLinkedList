@@ -11,6 +11,8 @@ class SimpleLinkedList {
   private var head: SimpleNode?
   private var tail: SimpleNode?
 
+  var count: Int = 0
+
   var isEmpty: Bool {
     return head == nil
   }
@@ -21,6 +23,14 @@ class SimpleLinkedList {
 
   var last: SimpleNode? {
     return tail
+  }
+
+  func append(value: String) {
+    let newNode = SimpleNode(value: value)
+
+    head = newNode
+    tail = newNode
+    count += 1
   }
 }
 
@@ -38,7 +48,20 @@ class SimpleLinkedListTests: XCTestCase {
     let sut = SimpleLinkedList()
 
     XCTAssertTrue(sut.isEmpty)
+    XCTAssertEqual(sut.count, 0)
     XCTAssertNil(sut.first)
     XCTAssertNil(sut.last)
+  }
+
+  func test_append_appendOneValueToLinkedList() {
+    let value = "any-node"
+    let sut = SimpleLinkedList()
+
+    sut.append(value: value)
+
+    XCTAssertEqual(sut.count, 1)
+    XCTAssertFalse(sut.isEmpty)
+    XCTAssertNotNil(sut.first)
+    XCTAssertNotNil(sut.last)
   }
 }
