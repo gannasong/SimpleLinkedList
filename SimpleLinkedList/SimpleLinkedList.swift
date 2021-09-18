@@ -45,4 +45,49 @@ public class SimpleLinkedList {
     tail = nil
     count = 0
   }
+
+  public func remove(node: SimpleNode) -> String {
+    let prev = node.previous
+    let next = node.next
+
+    if let prev = prev {
+      prev.next = next
+    } else {
+      head = next
+    }
+
+    next?.previous = prev
+
+    if next == nil {
+      tail = prev
+    }
+
+    node.previous = nil
+    node.next = nil
+    count -= 1
+
+    return node.value
+  }
+
+//  private func remove(node: Node) -> T {
+//    let prev = node.previous
+//    let next = node.next
+//
+//    if let prev = prev {
+//      prev.next = next
+//    } else {
+//      head = next
+//    }
+//
+//    next?.previous = prev
+//
+//    if next == nil {
+//      tail = prev
+//    }
+//
+//    node.previous = nil
+//    node.next = nil
+//    countVariable.accept(countVariable.value - 1)
+//    return node.value
+//  }
 }
