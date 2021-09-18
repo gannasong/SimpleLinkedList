@@ -6,49 +6,7 @@
 //
 
 import XCTest
-
-class SimpleLinkedList {
-  private var head: SimpleNode?
-  private var tail: SimpleNode?
-
-  var count: Int = 0
-
-  var isEmpty: Bool {
-    return head == nil
-  }
-
-  var first: SimpleNode? {
-    return head
-  }
-
-  var last: SimpleNode? {
-    return tail
-  }
-
-  func append(value: String) {
-    let newNode = SimpleNode(value: value)
-    if let tailNode = tail {
-      newNode.previous = tailNode
-      tailNode.next = newNode
-    } else {
-      head = newNode
-    }
-
-    tail = newNode
-    count += 1
-  }
-}
-
-class SimpleNode {
-  var value: String
-  var next: SimpleNode?
-  // To avoid ownership cycles, declare the previous pointer to be weak.
-  weak var previous: SimpleNode?
-
-  init(value: String) {
-    self.value = value
-  }
-}
+import SimpleLinkedList
 
 class SimpleLinkedListTests: XCTestCase {
 

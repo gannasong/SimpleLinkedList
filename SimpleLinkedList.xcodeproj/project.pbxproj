@@ -10,6 +10,8 @@
 		49DBBBE726F5BB5B00B1058D /* SimpleLinkedList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DBBBDD26F5BB5B00B1058D /* SimpleLinkedList.framework */; };
 		49DBBBEC26F5BB5B00B1058D /* SimpleLinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBBBEB26F5BB5B00B1058D /* SimpleLinkedListTests.swift */; };
 		49DBBBF926F5D73200B1058D /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBBBF826F5D73200B1058D /* XCTestCase+MemoryLeakTracking.swift */; };
+		49DBBBFB26F5D7BB00B1058D /* SimpleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBBBFA26F5D7BB00B1058D /* SimpleNode.swift */; };
+		49DBBBFD26F5D7F900B1058D /* SimpleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBBBFC26F5D7F900B1058D /* SimpleLinkedList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		49DBBBEB26F5BB5B00B1058D /* SimpleLinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLinkedListTests.swift; sourceTree = "<group>"; };
 		49DBBBED26F5BB5B00B1058D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DBBBF826F5D73200B1058D /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		49DBBBFA26F5D7BB00B1058D /* SimpleNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleNode.swift; sourceTree = "<group>"; };
+		49DBBBFC26F5D7F900B1058D /* SimpleLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLinkedList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				49DBBBE126F5BB5B00B1058D /* Info.plist */,
+				49DBBBFA26F5D7BB00B1058D /* SimpleNode.swift */,
+				49DBBBFC26F5D7F900B1058D /* SimpleLinkedList.swift */,
 			);
 			path = SimpleLinkedList;
 			sourceTree = "<group>";
@@ -154,6 +160,7 @@
 				TargetAttributes = {
 					49DBBBDC26F5BB5B00B1058D = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 					49DBBBE526F5BB5B00B1058D = {
 						CreatedOnToolsVersion = 12.5;
@@ -201,6 +208,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DBBBFD26F5D7F900B1058D /* SimpleLinkedList.swift in Sources */,
+				49DBBBFB26F5D7BB00B1058D /* SimpleNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +357,7 @@
 		49DBBBF226F5BB5B00B1058D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -365,6 +375,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.GanNaSong.SimpleLinkedList;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -372,6 +383,7 @@
 		49DBBBF326F5BB5B00B1058D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -396,6 +408,7 @@
 		49DBBBF526F5BB5B00B1058D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 6LL6SWW7S3;
@@ -414,6 +427,7 @@
 		49DBBBF626F5BB5B00B1058D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 6LL6SWW7S3;
