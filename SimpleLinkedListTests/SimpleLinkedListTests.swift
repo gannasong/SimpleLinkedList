@@ -65,7 +65,7 @@ class SimpleLinkedListTests: XCTestCase {
     XCTAssertNil(sut.last)
   }
 
-  func test_remove_removeFirstNode() {
+  func test_remove_removeNodesFromLinkedList() {
     let samples = ["1", "2", "3", "4", "5"]
     let sut = makeSUT()
 
@@ -79,6 +79,13 @@ class SimpleLinkedListTests: XCTestCase {
     XCTAssertEqual(sut.count, 4)
     XCTAssertEqual(firstString, "1")
     XCTAssertEqual(sut.first?.value, "2")
+
+    let last = sut.last!
+    let lastString = sut.remove(node: last)
+
+    XCTAssertEqual(sut.count, 3)
+    XCTAssertEqual(lastString, "5")
+    XCTAssertEqual(sut.last?.value, "4")
   }
 
   // MARK: - Helper
