@@ -90,8 +90,9 @@ class SimpleLinkedListTests: XCTestCase {
 
   // MARK: - Helper
 
-  private func makeSUT() -> SimpleLinkedList {
+  private func makeSUT(file: StaticString = #file, line: UInt = #line) -> SimpleLinkedList {
     let sut = SimpleLinkedList()
+    trackForMemoryLeaks(sut, file: file, line: line)
     return sut
   }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		49DBBBE726F5BB5B00B1058D /* SimpleLinkedList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DBBBDD26F5BB5B00B1058D /* SimpleLinkedList.framework */; };
 		49DBBBEC26F5BB5B00B1058D /* SimpleLinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBBBEB26F5BB5B00B1058D /* SimpleLinkedListTests.swift */; };
+		49DBBBF926F5D73200B1058D /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBBBF826F5D73200B1058D /* XCTestCase+MemoryLeakTracking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,7 @@
 		49DBBBE626F5BB5B00B1058D /* SimpleLinkedListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleLinkedListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DBBBEB26F5BB5B00B1058D /* SimpleLinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLinkedListTests.swift; sourceTree = "<group>"; };
 		49DBBBED26F5BB5B00B1058D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49DBBBF826F5D73200B1058D /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,10 +79,19 @@
 		49DBBBEA26F5BB5B00B1058D /* SimpleLinkedListTests */ = {
 			isa = PBXGroup;
 			children = (
+				49DBBBF726F5D71D00B1058D /* Helpers */,
 				49DBBBEB26F5BB5B00B1058D /* SimpleLinkedListTests.swift */,
 				49DBBBED26F5BB5B00B1058D /* Info.plist */,
 			);
 			path = SimpleLinkedListTests;
+			sourceTree = "<group>";
+		};
+		49DBBBF726F5D71D00B1058D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				49DBBBF826F5D73200B1058D /* XCTestCase+MemoryLeakTracking.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DBBBEC26F5BB5B00B1058D /* SimpleLinkedListTests.swift in Sources */,
+				49DBBBF926F5D73200B1058D /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
