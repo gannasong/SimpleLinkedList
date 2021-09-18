@@ -53,7 +53,7 @@ class SimpleNode {
 class SimpleLinkedListTests: XCTestCase {
 
   func test_init_doesNotStoreAnyNode() {
-    let sut = SimpleLinkedList()
+    let sut = makeSUT()
 
     XCTAssertTrue(sut.isEmpty)
     XCTAssertEqual(sut.count, 0)
@@ -78,7 +78,7 @@ class SimpleLinkedListTests: XCTestCase {
   func test_append_appendTwoNodeToLinkedList() {
     let value = "any-node"
     let anotherValue = "another-node"
-    let sut = SimpleLinkedList()
+    let sut = makeSUT()
 
     sut.append(value: value)
     sut.append(value: anotherValue)
@@ -86,5 +86,12 @@ class SimpleLinkedListTests: XCTestCase {
     XCTAssertEqual(sut.count, 2)
     XCTAssertEqual(sut.first?.value, value)
     XCTAssertEqual(sut.last?.value, anotherValue)
+  }
+
+  // MARK: - Helper
+
+  private func makeSUT() -> SimpleLinkedList {
+    let sut = SimpleLinkedList()
+    return sut
   }
 }
