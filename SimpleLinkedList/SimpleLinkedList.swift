@@ -46,6 +46,11 @@ public class SimpleLinkedList {
     count = 0
   }
 
+  public func removeFirst() -> String? {
+    guard count > 0 else { return nil }
+    return remove(node: head!)
+  }
+
   public func remove(node: SimpleNode) -> String {
     let prev = node.previous
     let next = node.next
