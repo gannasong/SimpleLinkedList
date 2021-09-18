@@ -7,10 +7,25 @@
 
 import XCTest
 
+class SimpleLinkedList {
+  private var head: SimpleNode?
+  private var tail: SimpleNode?
+
+  var isEmpty: Bool {
+    return head == nil
+  }
+}
+
+class SimpleNode {
+
+}
+
 class SimpleLinkedListTests: XCTestCase {
 
-  func test() {
-    
+  func test_init_doesNotStoreAnyNode() {
+    let sut = SimpleLinkedList()
+
+    XCTAssertTrue(sut.isEmpty)
   }
 
 }
