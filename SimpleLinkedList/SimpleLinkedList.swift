@@ -39,4 +39,10 @@ public class SimpleLinkedList {
     tail = newNode
     count += 1
   }
+
+  public func removeAll() {
+    head = nil
+    tail = nil
+    count = 0
+  }
 }
