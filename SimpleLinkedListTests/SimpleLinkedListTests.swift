@@ -27,8 +27,13 @@ class SimpleLinkedList {
 
   func append(value: String) {
     let newNode = SimpleNode(value: value)
+    if let tailNode = tail {
+      newNode.previous = tailNode
+      tailNode.next = newNode
+    } else {
+      head = newNode
+    }
 
-    head = newNode
     tail = newNode
     count += 1
   }
@@ -36,6 +41,9 @@ class SimpleLinkedList {
 
 class SimpleNode {
   var value: String
+  var next: SimpleNode?
+  // To avoid ownership cycles, declare the previous pointer to be weak.
+  weak var previous: SimpleNode?
 
   init(value: String) {
     self.value = value
@@ -63,5 +71,20 @@ class SimpleLinkedListTests: XCTestCase {
     XCTAssertFalse(sut.isEmpty)
     XCTAssertNotNil(sut.first)
     XCTAssertNotNil(sut.last)
+    XCTAssertEqual(sut.first?.value, value)
+    XCTAssertEqual(sut.last?.value, value)
+  }
+
+  func test_append_appendTwoNodeToLinkedList() {
+    let value = "any-node"
+    let anotherValue = "another-node"
+    let sut = SimpleLinkedList()
+
+    sut.append(value: value)
+    sut.append(value: anotherValue)
+
+    XCTAssertEqual(sut.count, 2)
+    XCTAssertEqual(sut.first?.value, value)
+    XCTAssertEqual(sut.last?.value, anotherValue)
   }
 }
