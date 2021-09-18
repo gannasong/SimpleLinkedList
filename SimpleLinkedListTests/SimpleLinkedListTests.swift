@@ -14,10 +14,22 @@ class SimpleLinkedList {
   var isEmpty: Bool {
     return head == nil
   }
+
+  var first: SimpleNode? {
+    return head
+  }
+
+  var last: SimpleNode? {
+    return tail
+  }
 }
 
 class SimpleNode {
+  var value: String
 
+  init(value: String) {
+    self.value = value
+  }
 }
 
 class SimpleLinkedListTests: XCTestCase {
@@ -26,6 +38,7 @@ class SimpleLinkedListTests: XCTestCase {
     let sut = SimpleLinkedList()
 
     XCTAssertTrue(sut.isEmpty)
+    XCTAssertNil(sut.first)
+    XCTAssertNil(sut.last)
   }
-
 }
