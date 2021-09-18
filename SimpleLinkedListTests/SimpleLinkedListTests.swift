@@ -21,7 +21,7 @@ class SimpleLinkedListTests: XCTestCase {
 
   func test_append_appendOneValueToLinkedList() {
     let value = "any-node"
-    let sut = SimpleLinkedList()
+    let sut = makeSUT()
 
     sut.append(value: value)
 
@@ -113,8 +113,8 @@ class SimpleLinkedListTests: XCTestCase {
 
   // MARK: - Helper
 
-  private func makeSUT(file: StaticString = #file, line: UInt = #line) -> SimpleLinkedList {
-    let sut = SimpleLinkedList()
+  private func makeSUT(file: StaticString = #file, line: UInt = #line) -> SimpleLinkedList<String> {
+    let sut = SimpleLinkedList<String>()
     trackForMemoryLeaks(sut, file: file, line: line)
     return sut
   }

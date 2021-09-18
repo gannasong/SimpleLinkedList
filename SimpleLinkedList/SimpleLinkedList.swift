@@ -7,9 +7,11 @@
 
 import Foundation
 
-public class SimpleLinkedList {
-  private var head: SimpleNode?
-  private var tail: SimpleNode?
+public class SimpleLinkedList<T> {
+  public typealias Node = SimpleNode<T>
+
+  private var head: Node?
+  private var tail: Node?
 
   public private(set) var count: Int = 0
 
@@ -17,18 +19,22 @@ public class SimpleLinkedList {
     return head == nil
   }
 
-  public var first: SimpleNode? {
+  public var first: Node? {
     return head
   }
 
-  public var last: SimpleNode? {
+  public var last: Node? {
     return tail
   }
 
+  // MARK: - Initialization
+
   public init() {}
 
-  public func append(value: String) {
-    let newNode = SimpleNode(value: value)
+  // MARK: - Public Methods
+
+  public func append(value: T) {
+    let newNode = Node(value: value)
     if let tailNode = tail {
       newNode.previous = tailNode
       tailNode.next = newNode
@@ -46,12 +52,12 @@ public class SimpleLinkedList {
     count = 0
   }
 
-  public func removeFirst() -> String? {
+  public func removeFirst() -> T? {
     guard count > 0 else { return nil }
     return remove(node: head!)
   }
 
-  public func remove(node: SimpleNode) -> String {
+  public func remove(node: Node) -> T {
     let prev = node.previous
     let next = node.next
 

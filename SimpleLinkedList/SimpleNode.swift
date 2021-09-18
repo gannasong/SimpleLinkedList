@@ -7,13 +7,15 @@
 
 import Foundation
 
-public class SimpleNode {
-  public var value: String
+public class SimpleNode<T> {
+  public var value: T
   public var next: SimpleNode?
   // To avoid ownership cycles, declare the previous pointer to be weak.
   public weak var previous: SimpleNode?
 
-  public init(value: String) {
+  // MARK: - Initialization
+
+  public init(value: T) {
     self.value = value
   }
 }
